@@ -14,7 +14,7 @@ import isEqual from 'lodash/isEqual';
 const GEOLOCATION_OPTIONS = { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 };
 const ANCHOR = { x: 0.5, y: 0.5 };
 
-const colorOfmyLocationMapMarker = 'blue';
+const colorOfmyLocationMapMarker = '#2388FF';
 
 const propTypes = {
   ...Marker.propTypes,
@@ -81,7 +81,7 @@ export default class MyLocationMapMarker extends React.PureComponent {
       const { myPosition } = this.state;
       if (!myPosition) return null;
       coordinate = myPosition;
-      heading = myPosition.heading;
+      heading = 73;//myPosition.heading;
     }
 
     const rotate = (typeof heading === 'number' && heading >= 0) ? `${heading}deg` : null;
@@ -112,10 +112,10 @@ export default class MyLocationMapMarker extends React.PureComponent {
   }
 }
 
-const SIZE = 35;
-const HALO_RADIUS = 6;
-const ARROW_SIZE = 7;
-const ARROW_DISTANCE = 6;
+const SIZE = 15;
+const HALO_RADIUS = 4;
+const ARROW_SIZE = 6;
+const ARROW_DISTANCE = 7;
 const HALO_SIZE = SIZE + HALO_RADIUS;
 const HEADING_BOX_SIZE = HALO_SIZE + ARROW_SIZE + ARROW_DISTANCE;
 
